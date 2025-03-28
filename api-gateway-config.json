@@ -1,0 +1,57 @@
+{
+  "openapi" : "3.0.1",
+  "info" : {
+    "title" : "text-speech-API",
+    "version" : "2025-03-28 12:31:41UTC"
+  },
+  "servers" : [ {
+    "url" : "https://49uvi7husg.execute-api.eu-north-1.amazonaws.com/{basePath}",
+    "variables" : {
+      "basePath" : {
+        "default" : ""
+      }
+    }
+  } ],
+  "paths" : {
+    "/textToSpeechLambda" : {
+      "x-amazon-apigateway-any-method" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for ANY /textToSpeechLambda"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:585095118707:function:textToSpeechLambda/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    },
+    "/convert" : {
+      "post" : {
+        "responses" : {
+          "default" : {
+            "description" : "Default response for POST /convert"
+          }
+        },
+        "x-amazon-apigateway-integration" : {
+          "payloadFormatVersion" : "2.0",
+          "type" : "aws_proxy",
+          "httpMethod" : "POST",
+          "uri" : "arn:aws:apigateway:eu-north-1:lambda:path/2015-03-31/functions/arn:aws:lambda:eu-north-1:585095118707:function:textToSpeechLambda/invocations",
+          "connectionType" : "INTERNET"
+        }
+      }
+    }
+  },
+  "x-amazon-apigateway-cors" : {
+    "allowMethods" : [ "GET", "OPTIONS", "POST" ],
+    "allowHeaders" : [ "content-type" ],
+    "maxAge" : 600,
+    "allowCredentials" : false,
+    "allowOrigins" : [ "*", "http://127.0.0.1:5500" ]
+  },
+  "x-amazon-apigateway-importexport-version" : "1.0"
+}
