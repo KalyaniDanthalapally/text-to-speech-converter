@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text & File to Speech Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎤 Text & File to Speech Converter</h1>
+        
+        <textarea id="textInput" placeholder="Type something..."></textarea>
+        
+        <div class="file-upload">
+            <input type="file" id="fileInput" accept=".txt, .pdf">
+            <button onclick="handleFileUpload()">Upload File</button>
+        </div>
+        
+        <button id="convertBtn" onclick="convertText()">
+            Convert to Speech
+        </button>
+
+        <div id="loadingSpinner" class="hidden"></div>
+
+        <div id="audioContainer" class="hidden">
+            <p>🔊 Generated Audio:</p>
+            <audio id="audioPlayer" controls></audio>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
